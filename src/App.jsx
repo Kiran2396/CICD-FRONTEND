@@ -12,6 +12,18 @@ class App extends Component {
   add(){
     callApi("GET", BASEURL + `add/${this.state.A}/${this.state.B}`, "", this.getResponse);
   }
+  sub(){
+    callApi("GET", BASEURL + `sub/${this.state.A}/${this.state.B}`, "", this.getResponse);
+  }
+  mult(){
+    callApi("GET", BASEURL + `mult/${this.state.A}/${this.state.B}`, "", this.getResponse);
+  }
+  div(){
+    callApi("GET", BASEURL + `div/${this.state.A}/${this.state.B}`, "", this.getResponse);
+  }
+  mod(){
+    callApi("GET", BASEURL + `mod/${this.state.A}/${this.state.B}`, "", this.getResponse);
+  }
 
   getResponse(res){
     this.setState({RES: res});
@@ -44,7 +56,11 @@ class App extends Component {
             </tr>
             <tr>
               <td></td>
-              <td><button onClick={()=>this.add()}>ADD</button></td>              
+              <td><button onClick={()=>this.add()}>ADD</button></td>  
+              <td><button onClick={()=>this.sub()}>Subract</button></td> 
+              <td><button onClick={()=>this.mult()}>Multiplication</button></td> 
+              <td><button onClick={()=>this.div()}>Division</button></td> 
+              <td><button onClick={()=>this.mod()}>Modulus</button></td> 
             </tr>
           </table>
         </section>
